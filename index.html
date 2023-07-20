@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeira API</title>
+</head>
+<body>
+    <div class="container"></div>
+    <script>
+        (async()=>{
+    const resposta= await fetch('./local.json')
+    const data = await resposta.json()
+    
+    for (var item in data){
+        document.querySelector('.container').innerHTML+= (`<li>${data[item]}</li>`)
+    }
+})()
+
+    </script>
+</body>
+</html>
